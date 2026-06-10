@@ -99,4 +99,12 @@ export class UsersService {
       message: 'Usuário removido com sucesso'
     }
   }
+
+  async findByEmail(email: string) {
+    return this.prisma.user.findUnique({
+      where: {email}
+    })
+  }
+
+
 }
